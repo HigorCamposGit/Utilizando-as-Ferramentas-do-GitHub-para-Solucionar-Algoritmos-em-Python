@@ -1,17 +1,32 @@
 """
-Desafio: Concatenação de Dados
-Objetivo: Unir múltiplos textos enviados pelo usuário de forma amigável.
+Desafio: Verificador de Número Par ou Ímpar
+Objetivo: Ler números inteiros em sequência e permitir encerrar digitando 'sair'.
 """
 
 def main():
-    print("=== Concatenação de Dados ===")
-    
-    info1 = input("Digite o primeiro texto ou dado: ").strip()
-    info2 = input("Digite o segundo texto ou dado: ").strip()
+    print("=== Verificador de Número Par ou Ímpar ===")
+    print("Dica: Digite 'sair' a qualquer momento para encerrar o programa.\n")
 
-    resultado = f"{info1} {info2}"
+    while True:
+        # Recebe a entrada do usuário com o aviso direto no campo de digitação
+        entrada_str = input("Digite um número inteiro (ou 'sair' para encerrar): ").strip()
 
-    print(f"-> Resultado da concatenação: {resultado}")
+        # Verifica se o usuário quer sair
+        if entrada_str.lower() in ['sair', 's', 'exit', 'quit']:
+            print("Encerrando o verificador. Até logo!")
+            break
+
+        try:
+            # Converte para inteiro e verifica a paridade
+            entrada = int(entrada_str)
+
+            if entrada % 2 == 0:
+                print(f"-> O número {entrada} é Par.\n")
+            else:
+                print(f"-> O número {entrada} é Ímpar.\n")
+                
+        except ValueError:
+            print("-> Erro: Por favor, insira um número inteiro válido ou 'sair'.\n")
 
 if __name__ == "__main__":
     main()
