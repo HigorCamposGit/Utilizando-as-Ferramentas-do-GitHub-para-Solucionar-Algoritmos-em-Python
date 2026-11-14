@@ -1,36 +1,36 @@
 """
 Desafio: Calculadora Simples em Python
-Objetivo: Realizar operações aritméticas fundamentais com base nas entradas do usuário.
+Objetivo: Realizar operações aritméticas básicas com base na entrada do usuário.
 """
 
 def main():
+    print("=== Calculadora Simples ===")
+    
     try:
-        # Coleta os operandos e o operador aritmético com mensagens visíveis
         num1 = float(input("Digite o primeiro número: ").strip())
         num2 = float(input("Digite o segundo número: ").strip())
         operador = input("Escolha a operação (+, -, *, /): ").strip()
 
-        # Executa a operação correspondente com tratamento de exceções lógicas
         if operador == '+':
             resultado = num1 + num2
-            print(f"Resultado: {resultado}")
+            print(f"-> Resultado: {num1} + {num2} = {resultado}")
         elif operador == '-':
             resultado = num1 - num2
-            print(f"Resultado: {resultado}")
+            print(f"-> Resultado: {num1} - {num2} = {resultado}")
         elif operador == '*':
             resultado = num1 * num2
-            print(f"Resultado: {resultado}")
+            print(f"-> Resultado: {num1} * {num2} = {resultado}")
         elif operador == '/':
             if num2 != 0:
                 resultado = num1 / num2
-                print(f"Resultado: {resultado}")
+                print(f"-> Resultado: {num1} / {num2} = {resultado}")
             else:
-                print("Erro: Divisão por zero não é permitida.")
+                print("-> Erro: Divisão por zero não é permitida.")
         else:
-            print("Erro: Operador aritmético inválido.")
+            print("-> Erro: Operador aritmético inválido.")
             
     except ValueError:
-        print("Erro: Entrada numérica inválida.")
+        print("-> Erro: Entrada numérica inválida. Por favor, insira números válidos.")
 
 if __name__ == "__main__":
     main()
